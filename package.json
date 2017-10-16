@@ -73,5 +73,6 @@
     "prepublish": "babel ./react_components --out-dir ./dist --source-maps --presets es2015,stage-0,react",
     "start": "webpack-dev-server --hot --inline",
     "test": "BABEL_JEST_STAGE=0 jest"
-  }
+  },
+  "version": "1.0.0"
 }
