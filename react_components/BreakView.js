@@ -7,9 +7,9 @@ const BreakView = (props) => {
   const className = props.breakClassName || 'break';
 
   return (
-    <li className={className}>
+    <span className={className}>
       {label}
-    </li>
+    </span>
   );
 }
 

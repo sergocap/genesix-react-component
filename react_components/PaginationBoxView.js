@@ -195,36 +195,26 @@ export default class PaginationBoxView extends Component {
   render() {
     let disabled = this.props.disabledClassName;
 
-    const previousClasses = classNames(this.props.previousClassName,
-                                       {[disabled]: this.state.selected === 0});
-
-    const nextClasses = classNames(this.props.nextClassName,
-                                   {[disabled]: this.state.selected === this.props.pageCount - 1});
-
     return (
-      <ul className={this.props.containerClassName}>
-        <li className={previousClasses}>
-          <a onClick={this.handlePreviousPage}
-             className={this.props.previousLinkClassName}
-             href={this.hrefBuilder(this.state.selected - 1)}
-             tabIndex="0"
-             onKeyPress={this.handlePreviousPage}>
-            {this.props.previousLabel}
-          </a>
-        </li>
+      <div className={this.props.containerClassName}>
+        <a onClick={this.handlePreviousPage}
+           className={this.props.previousLinkClassName}
+           href={this.hrefBuilder(this.state.selected - 1)}
+           tabIndex="0"
+           onKeyPress={this.handlePreviousPage}>
+          {this.props.previousLabel}
+        </a>
 
         {createFragment(this.pagination())}
 
-        <li className={nextClasses}>
-          <a onClick={this.handleNextPage}
-             className={this.props.nextLinkClassName}
-             href={this.hrefBuilder(this.state.selected + 1)}
-             tabIndex="0"
-             onKeyPress={this.handleNextPage}>
-            {this.props.nextLabel}
-          </a>
-        </li>
-      </ul>
+        <a onClick={this.handleNextPage}
+           className={this.props.nextLinkClassName}
+           href={this.hrefBuilder(this.state.selected + 1)}
+           tabIndex="0"
+           onKeyPress={this.handleNextPage}>
+          {this.props.nextLabel}
+        </a>
+      </div>
     );
   }
 };
