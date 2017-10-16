@@ -15,7 +15,7 @@ var BreakView = function BreakView(props) {
   var className = props.breakClassName || 'break';
 
   return _react2.default.createElement(
-    'li',
+    'span',
     { className: className },
     label
   );
