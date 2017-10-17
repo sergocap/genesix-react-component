@@ -191,7 +191,7 @@ var PaginationBoxView = function (_Component) {
       return _react2.default.createElement(
         'div',
         { className: this.props.containerClassName },
-        _react2.default.createElement(
+        this.state.selected != 0 && _react2.default.createElement(
           'a',
           { onClick: this.handlePreviousPage,
             className: this.props.previousLinkClassName,
@@ -201,7 +201,7 @@ var PaginationBoxView = function (_Component) {
           this.props.previousLabel
         ),
         (0, _reactAddonsCreateFragment2.default)(this.pagination()),
-        _react2.default.createElement(
+        this.state.selected + 1 != this.props.pageCount && _react2.default.createElement(
           'a',
           { onClick: this.handleNextPage,
             className: this.props.nextLinkClassName,
